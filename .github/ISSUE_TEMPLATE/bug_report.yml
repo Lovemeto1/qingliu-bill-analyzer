@@ -1,0 +1,53 @@
+name: Bug 报告
+description: 报告可复现的程序问题，请勿上传真实账单。
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢反馈。账单是敏感数据，请仅使用完全虚构的最小样例，删除姓名、账号、订单号、商户和备注等信息。
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: 隐私确认
+      options:
+        - label: 我确认本 Issue、附件、日志和截图中不包含真实账单或个人信息。
+          required: true
+  - type: input
+    id: version
+    attributes:
+      label: 版本
+      placeholder: 例如 v1.0.0 或 main 分支提交号
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: 账单平台
+      options:
+        - 微信
+        - 支付宝
+        - 无关或不确定
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: 问题描述与复现步骤
+      description: 请说明预期结果和实际结果。
+    validations:
+      required: true
+  - type: textarea
+    id: synthetic_sample
+    attributes:
+      label: 虚构的最小样例（可选）
+      description: 只提供复现所需字段，禁止粘贴原始账单。
+      render: text
+  - type: input
+    id: environment
+    attributes:
+      label: 运行环境
+      placeholder: Windows 11 桌面版 / Python 3.12 源码版
+    validations:
+      required: true
